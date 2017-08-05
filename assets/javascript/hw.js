@@ -19,6 +19,10 @@ $( document ).ready(function() {
 	$("#add-character").on("click", function(event) {
 	event.preventDefault();
 	var character = $("#character-input").val().trim();
+    if ($("#character-input").val() === "") {
+      alert("You can't submit an empty button");
+      return false;
+    }
 	characters.push(character);
 	renderButtons();
 	});
